@@ -4,7 +4,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 @Entity
 public class Cidade {
-    @PrimaryKey(autoGenerate = true) private int cidadeID;
+    @PrimaryKey(autoGenerate = true) public int cidadeID;
     private String cidade;
     private String estado;
 
@@ -37,7 +37,6 @@ public class Cidade {
     }
 
     public String toString() {
-        return getCidadeID() + ": " + getCidade()+
-                "Marca: "+getEstado();
+        return getCidade() +" - " + getEstado();
     }
 }

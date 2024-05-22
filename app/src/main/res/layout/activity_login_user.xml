@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".view.LoginUser">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background01"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+    </ImageView>
+
     <TextView
         android:id="@+id/txtLogin"
         android:layout_width="wrap_content"
