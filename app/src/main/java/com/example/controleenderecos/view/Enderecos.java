@@ -83,10 +83,7 @@ public class Enderecos extends AppCompatActivity {
             Double longitude = Double.parseDouble(longitudestr);
             Endereco novoEnd = new Endereco(descricao, latitude, longitude, cidadeSelecionada.cidadeID);
 
-            //String nome = cidadeSelecionada.getCidade();
-
-            //Endereco enderecoAux = new Endereco("");
-            //enderecoAux.setNome(nome);
+            String nomeCidade = db.cidades().getNomePorID(cidadeSelecionada.getCidadeID());
 
             if(cidadeSelecionada != null){
                 db.enderecos().insert(novoEnd);

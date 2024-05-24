@@ -29,5 +29,4 @@ public interface CidadeDAO {
 
     @Delete
     void delete(Cidade cidade);
-
 }

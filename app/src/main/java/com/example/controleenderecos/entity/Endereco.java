@@ -4,6 +4,7 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import com.example.controleenderecos.dao.CidadeDAO;
 import com.example.controleenderecos.database.LocalDatabase;
 
 @Entity(foreignKeys = @ForeignKey(entity = Cidade.class, parentColumns = "cidadeID", childColumns = "cidadeIDFK", onDelete = ForeignKey.CASCADE, onUpdate = ForeignKey.CASCADE))
@@ -20,11 +21,6 @@ public class Endereco {
         this.longitude = longitude;
         this.cidadeIDFK = cidadeIDFK;
     }
-
-    public Endereco(String nome){
-        return;
-    }
-
     public int getEnderecoID() {
         return enderecoID;
     }
@@ -59,8 +55,8 @@ public class Endereco {
     public int getCidadeIDFK(){
         return cidadeIDFK;
     }
-    public String toString() {
-            return getDescricao() + getCidadeIDFK();
 
+    public String toString() {
+        return getDescricao() +" - " + getCidadeIDFK();
     }
 }
