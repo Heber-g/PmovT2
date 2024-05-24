@@ -104,7 +104,8 @@ public class Cidades extends AppCompatActivity {
                 db.cidades().insert(cidade);
                 Toast.makeText(this, "Cidade inserida com sucesso.",
                         Toast.LENGTH_SHORT).show();
-
+                binding.edtNomeCidade.setText("");
+                binding.edtEstadoCidade.setText("");
             }
             preencherCidades();
         }

@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.controleenderecos.R;
 import com.example.controleenderecos.database.LocalDatabase;
 import com.example.controleenderecos.databinding.ActivityEnderecosBinding;
 import com.example.controleenderecos.entity.Cidade;
@@ -55,6 +56,8 @@ public class Enderecos extends AppCompatActivity {
         ArrayAdapter<Cidade> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
                 listaCidades);
         binding.spinnerCidade.setAdapter(adapter);
+        Spinner spinner = findViewById(R.id.spinnerCidade);
+        spinner.setSelection(0, false);
 
         binding.spinnerCidade.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -83,14 +86,14 @@ public class Enderecos extends AppCompatActivity {
             Double longitude = Double.parseDouble(longitudestr);
             Endereco novoEnd = new Endereco(descricao, latitude, longitude, cidadeSelecionada.cidadeID);
 
-            String nomeCidade = db.cidades().getNomePorID(cidadeSelecionada.getCidadeID());
+            //String nomeCidade = db.cidades().getNomePorID(cidadeSelecionada.getCidadeID());
 
             if(cidadeSelecionada != null){
                 db.enderecos().insert(novoEnd);
                 Toast.makeText(this, "Endereço cadastrado com sucesso.",
                         Toast.LENGTH_SHORT).show();
             }
-            popularSpinner();
+            finish();
         }
     }
 

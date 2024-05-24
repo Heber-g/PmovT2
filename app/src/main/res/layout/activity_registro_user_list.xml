@@ -11,25 +11,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/background01"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
-    </ImageView>
+        android:src="@drawable/background02"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
 
     <EditText
         android:id="@+id/edtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
         android:hint="Email:"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRegistrar" />
+        app:layout_constraintTop_toBottomOf="@+id/edtNome" />
 
     <EditText
         android:id="@+id/edtSenha"
@@ -52,24 +52,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="50dp"
         android:onClick="salvarUsuarios"
         android:text="Confirmar"
-        app:layout_constraintBottom_toTopOf="@+id/listViewUsuarios"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNome" />
+        app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
 
     <ListView
         android:id="@+id/listViewUsuarios"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
-        android:layout_marginStart="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtModificar" />
 
@@ -80,23 +78,20 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="5dp"
         android:text="Registrar"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/edtEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.363" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtModificar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="170dp"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="5dp"
         android:text="Modificar"
@@ -106,7 +101,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNome" />
+        app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
 
     <Button
         android:id="@+id/btnVoltarInicio"
@@ -114,23 +109,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="13dp"
-        android:layout_marginBottom="50dp"
         android:text="Voltar"
-        app:layout_constraintBottom_toTopOf="@+id/listViewUsuarios"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNome" />
+        app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
 
     <EditText
         android:id="@+id/edtNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
         android:hint="Nome:"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
+        app:layout_constraintTop_toBottomOf="@+id/txtRegistrar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".view.Enderecos">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background02"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+    </ImageView>
+
     <TextView
         android:id="@+id/txtEndereco"
         android:layout_width="match_parent"
@@ -30,13 +40,14 @@
         android:layout_marginEnd="10dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:hint="Descrição"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEndereco" />
 
     <EditText
         android:id="@+id/edtLat"
+        android:hint="Latitude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -50,6 +61,7 @@
 
     <EditText
         android:id="@+id/edtLong"
+        android:hint="Longitude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -66,9 +78,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginBottom="388dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVoltarEnd"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtLong" />
 
