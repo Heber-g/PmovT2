@@ -30,6 +30,7 @@ public class RegistroUserView extends AppCompatActivity {
     private ActivityRegistroUserViewBinding binding;
     private LocalDatabase db;
     private int dbUsuarioID;
+    private List<Usuario> usuarioList;
 
     private ArrayAdapter<Usuario> usuarioArrayAdapter;
 
@@ -43,6 +44,8 @@ public class RegistroUserView extends AppCompatActivity {
 
         db = LocalDatabase.getDatabase(getApplicationContext());
         dbUsuarioID = getIntent().getIntExtra("Usuario_Selecionado_ID", -1);
+
+        preencherCampos(dbUsuarioID);
 
         binding.btnCancela.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +68,14 @@ public class RegistroUserView extends AppCompatActivity {
             }
         });
     }
+
+        public void preencherCampos(int ID){
+            Usuario user = db.usuarios().getUsuariosPorID(ID);
+            binding.edtNovoNome.setText(user.getNome());
+            binding.edtNovoEmail.setText(user.getEmail());
+            binding.edtNovaSenha.setText(user.getSenha());
+        }
+
         public void ModificarUsuarios(View view) {
             String email = binding.edtNovoEmail.getText().toString();
             String senha = binding.edtNovaSenha.getText().toString();

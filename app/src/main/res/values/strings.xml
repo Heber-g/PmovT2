@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ControleEnderecos</string>
+    <string name="bem_vindo">Seja bem vindo!</string>
+    <string name="operacao">Selecione a operação desejada.</string>
+    <string name="endView">Endereços cadastrados</string>
+    <string name="DicaCadEnd">Clique em um endereço para modificá-lo ou
+    acessar sua posição no mapa.</string>
+    <string name="txtend">Cadastrar Endereços</string>
 </resources>

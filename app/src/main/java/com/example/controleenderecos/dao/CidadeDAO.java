@@ -7,6 +7,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import com.example.controleenderecos.entity.Cidade;
+import com.example.controleenderecos.view.Cidades;
 
 import java.util.List;
 
@@ -14,6 +15,8 @@ import java.util.List;
 public interface CidadeDAO {
     @Query("SELECT * FROM Cidade WHERE cidadeID = :id LIMIT 1")
     Cidade getCidadeID(int id);
+    @Query("SELECT cidade FROM Cidade Where cidadeID = :id LIMIT 1")
+    String getNomePorID(int id);
 
     @Query("Select * from Cidade")
     List<Cidade> getAll();
@@ -26,4 +29,5 @@ public interface CidadeDAO {
 
     @Delete
     void delete(Cidade cidade);
+
 }

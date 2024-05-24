@@ -16,6 +16,7 @@ import com.example.controleenderecos.R;
 import com.example.controleenderecos.database.LocalDatabase;
 import com.example.controleenderecos.databinding.ActivityCidadesEdicaoBinding;
 import com.example.controleenderecos.entity.Cidade;
+import com.example.controleenderecos.entity.Usuario;
 
 public class CidadesEdicao extends AppCompatActivity {
     private ActivityCidadesEdicaoBinding binding;
@@ -31,6 +32,8 @@ public class CidadesEdicao extends AppCompatActivity {
 
         db = LocalDatabase.getDatabase(getApplicationContext());
         dbCidadeID = getIntent().getIntExtra("Cidade_Selecionada_ID", -1);
+
+        preencherCampos(dbCidadeID);
 
         binding.btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +53,11 @@ public class CidadesEdicao extends AppCompatActivity {
                 excluirCidade();
             }
         });
+    }
+    public void preencherCampos(int ID){
+        Cidade cidade = db.cidades().getCidadeID(ID);
+        binding.edtNovoNomeCidade.setText(cidade.getCidade());
+        binding.edtNovoNomeEstado.setText(cidade.getEstado());
     }
     public void modificarCidade(View view){
         String novoNome = binding.edtNovoNomeCidade.getText().toString();

@@ -67,7 +67,7 @@ public class LoginUser extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }else{
                 Toast.makeText(LoginUser.this, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show();
-                Intent it = new Intent(LoginUser.this, Cidades.class);
+                Intent it = new Intent(LoginUser.this, TelaInicial.class);
                 startActivity(it);
             }
         }
