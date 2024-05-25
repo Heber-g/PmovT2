@@ -57,11 +57,11 @@ public class CidadesEdicao extends AppCompatActivity {
     public void preencherCampos(int ID){
         Cidade cidade = db.cidades().getCidadeID(ID);
         binding.edtNovoNomeCidade.setText(cidade.getCidade());
-        binding.edtNovoNomeEstado.setText(cidade.getEstado());
+        binding.edtNovoNomeEstado.setText(cidade.getEstado().toUpperCase());
     }
     public void modificarCidade(View view){
         String novoNome = binding.edtNovoNomeCidade.getText().toString();
-        String novoEstado = binding.edtNovoNomeEstado.getText().toString();
+        String novoEstado = binding.edtNovoNomeEstado.getText().toString().toUpperCase();
 
         if(novoNome.isEmpty()){
             Toast.makeText(this, "Preencha o nome da cidade", Toast.LENGTH_SHORT).show();

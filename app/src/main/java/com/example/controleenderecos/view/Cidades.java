@@ -87,7 +87,7 @@ public class Cidades extends AppCompatActivity {
 
     public void salvarCidades(View v){
         String nome = binding.edtNomeCidade.getText().toString();
-        String endereco = binding.edtEstadoCidade.getText().toString();
+        String endereco = binding.edtEstadoCidade.getText().toString().toUpperCase();
 
         if(nome.isEmpty()){
             Toast.makeText(this, "Preencha o nome da cidade",
