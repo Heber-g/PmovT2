@@ -1,5 +1,7 @@
 package com.example.controleenderecos.view;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,7 +52,7 @@ public class EnderecoEdicao extends AppCompatActivity {
         binding.btnExcluirEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                excluirEnd();
+                excluirEnd(v);
             }
         });
         binding.btnMapa.setOnClickListener(new View.OnClickListener() {
@@ -95,7 +97,24 @@ public class EnderecoEdicao extends AppCompatActivity {
         finish();
     }
 
-    public void excluirEnd(){
-
+    public void excluirEnd(View view){
+        new AlertDialog.Builder(this)
+                .setTitle("Exclusão")
+                .setMessage("Deseja excluir esse Endereço?")
+                .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        excluir();
+                    }
+                })
+                .setNegativeButton("Não", null)
+                .show();
+    }
+    public void excluir(){
+        Endereco endereco = new Endereco();
+        endereco.setEnderecoID(dbEnderecoID);
+        db.enderecos().delete(endereco);
+        Toast.makeText(this, "Endereço excluído com sucesso.", Toast.LENGTH_SHORT).show();
+        finish();
     }
 }

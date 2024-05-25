@@ -21,6 +21,10 @@ public class Endereco {
         this.longitude = longitude;
         this.cidadeIDFK = cidadeIDFK;
     }
+
+    public Endereco(){
+
+    }
     public int getEnderecoID() {
         return enderecoID;
     }
@@ -54,6 +58,10 @@ public class Endereco {
     }
     public int getCidadeIDFK(){
         return cidadeIDFK;
+    }
+
+    public void setCidadeIDFK(int cidadeIDFK){
+        this.cidadeIDFK = cidadeIDFK;
     }
 
     public String toString() {
