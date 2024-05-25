@@ -58,8 +58,10 @@ public class EnderecoEdicao extends AppCompatActivity {
         binding.btnMapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(EnderecoEdicao.this, Enderecos.class);
+                Intent it = new Intent(EnderecoEdicao.this, Mapa.class);
+                it.putExtra("Endereco_Selecionado_ID", dbEnderecoID);
                 startActivity(it);
+                finish();
             }
         });
     }
