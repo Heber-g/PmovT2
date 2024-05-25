@@ -6,4 +6,5 @@
     <string name="DicaCadEnd">Clique em um endereço para modificá-lo ou
     acessar sua posição no mapa.</string>
     <string name="txtend">Cadastrar Endereços</string>
+    <string name="btnCidade">Não encontrou sua cidade na lista? Clique no botão Cidade e cadastre-a!</string>
 </resources>

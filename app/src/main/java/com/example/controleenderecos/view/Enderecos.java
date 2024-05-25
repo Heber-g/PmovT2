@@ -1,5 +1,6 @@
 package com.example.controleenderecos.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -45,6 +46,13 @@ public class Enderecos extends AppCompatActivity {
                 cadastrarEnd(v);
             }
         });
+        binding.btnCidadeEnd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(Enderecos.this, Cidades.class);
+                startActivity(it);
+            }
+        });
     }
     protected void onResume(){
         super.onResume();
@@ -56,8 +64,6 @@ public class Enderecos extends AppCompatActivity {
         ArrayAdapter<Cidade> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
                 listaCidades);
         binding.spinnerCidade.setAdapter(adapter);
-        Spinner spinner = findViewById(R.id.spinnerCidade);
-        spinner.setSelection(0, false);
 
         binding.spinnerCidade.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

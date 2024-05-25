@@ -64,11 +64,12 @@ public class TelaInicial extends AppCompatActivity {
     }
     protected void onResume(){
         super.onResume();
+        edtIntent = new Intent(this, EnderecoEdicao.class);
         preencherLista();
     }
     public void preencherLista(){
         endList = db.enderecos().getAll();
-        Map<Integer, String> cidadeMap = obterMapaCidades(); // Método para obter o mapa de IDs de cidade para nomes de cidade
+        Map<Integer, String> cidadeMap = obterMapaCidades();
 
         if (endList != null && !endList.isEmpty()) {
             binding.txtApresentaEnd.setVisibility(View.VISIBLE);
@@ -97,6 +98,14 @@ public class TelaInicial extends AppCompatActivity {
         };
 
         listViewEnderecos.setAdapter(adapter);
+        listViewEnderecos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Endereco endSelecionado = endList.get(position);
+                edtIntent.putExtra("Endereco_Selecionado_ID", endSelecionado.getEnderecoID());
+                startActivity(edtIntent);
+            }
+        });
     }
 
     private Map<Integer, String> obterMapaCidades() {

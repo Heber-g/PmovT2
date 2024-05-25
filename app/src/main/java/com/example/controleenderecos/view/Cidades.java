@@ -49,6 +49,12 @@ public class Cidades extends AppCompatActivity {
                 salvarCidades(v);
             }
         });
+        binding.btnVoltarCidade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
     @Override
     protected void onResume(){
