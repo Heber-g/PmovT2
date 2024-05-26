@@ -27,7 +27,7 @@
         android:shadowColor="@color/black"
         android:shadowDx="5"
         android:shadowDy="2"
-        android:shadowRadius="4"
+        android:shadowRadius="8"
         android:text="Controle de endereços"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
