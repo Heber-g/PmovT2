@@ -7,10 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.controleenderecos.R;
 import com.example.controleenderecos.database.LocalDatabase;
 import com.example.controleenderecos.databinding.ActivityLoginUserBinding;
-import com.example.controleenderecos.databinding.ActivityMainBinding;
 import com.example.controleenderecos.entity.Usuario;
 
 import java.util.List;
@@ -24,7 +22,7 @@ public class LoginUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        db = LocalDatabase.getDatabase(this);//
+        db = LocalDatabase.getDatabase(this);
 
         binding = ActivityLoginUserBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

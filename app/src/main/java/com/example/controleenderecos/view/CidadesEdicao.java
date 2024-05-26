@@ -6,17 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.controleenderecos.R;
 import com.example.controleenderecos.database.LocalDatabase;
 import com.example.controleenderecos.databinding.ActivityCidadesEdicaoBinding;
 import com.example.controleenderecos.entity.Cidade;
-import com.example.controleenderecos.entity.Usuario;
 
 public class CidadesEdicao extends AppCompatActivity {
     private ActivityCidadesEdicaoBinding binding;

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +21,6 @@ public class Enderecos extends AppCompatActivity {
     private ActivityEnderecosBinding binding;
     private LocalDatabase db;
     private List<Cidade> listaCidades;
-    private List<Endereco> listaEnd;
     private Cidade cidadeSelecionada;
 
     @Override
@@ -69,7 +67,7 @@ public class Enderecos extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 cidadeSelecionada = listaCidades.get(position);
-                Toast.makeText(Enderecos.this, "Selecionado: " + cidadeSelecionada, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Enderecos.this, "Selecionado: " + cidadeSelecionada, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -91,8 +89,6 @@ public class Enderecos extends AppCompatActivity {
             Double latitude = Double.parseDouble(latitudestr);
             Double longitude = Double.parseDouble(longitudestr);
             Endereco novoEnd = new Endereco(descricao, latitude, longitude, cidadeSelecionada.cidadeID);
-
-            //String nomeCidade = db.cidades().getNomePorID(cidadeSelecionada.getCidadeID());
 
             if(cidadeSelecionada != null){
                 db.enderecos().insert(novoEnd);

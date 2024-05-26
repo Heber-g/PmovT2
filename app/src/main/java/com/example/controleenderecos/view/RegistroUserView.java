@@ -1,45 +1,27 @@
 package com.example.controleenderecos.view;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.controleenderecos.R;
 import com.example.controleenderecos.database.LocalDatabase;
-import com.example.controleenderecos.databinding.ActivityMainBinding;
-import com.example.controleenderecos.databinding.ActivityRegistroUserListBinding;
 import com.example.controleenderecos.databinding.ActivityRegistroUserViewBinding;
 import com.example.controleenderecos.entity.Usuario;
-
-import java.util.List;
 
 public class RegistroUserView extends AppCompatActivity {
     private ActivityRegistroUserViewBinding binding;
     private LocalDatabase db;
     private int dbUsuarioID;
-    private List<Usuario> usuarioList;
-
-    private ArrayAdapter<Usuario> usuarioArrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityRegistroUserViewBinding.inflate(getLayoutInflater());
-        //EdgeToEdge.enable(this);
         setContentView(binding.getRoot());
 
         db = LocalDatabase.getDatabase(getApplicationContext());
@@ -95,9 +77,7 @@ public class RegistroUserView extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             } else {
                 Usuario novoUsuario = new Usuario(nome, email, senha);
-                //novoUsuario.setUsuarioID(usuario.get(listViewUser.getSelectedItemPosition()).getUsuarioID());
                 novoUsuario.setUsuarioID(dbUsuarioID);
-
                 db.usuarios().update(novoUsuario);
                 Toast.makeText(this, "Usuário atualizado com sucesso.",
                 Toast.LENGTH_SHORT).show();

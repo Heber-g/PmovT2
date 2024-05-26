@@ -8,17 +8,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.controleenderecos.R;
 import com.example.controleenderecos.database.LocalDatabase;
 import com.example.controleenderecos.databinding.ActivityCidadesBinding;
 import com.example.controleenderecos.entity.Cidade;
-import com.example.controleenderecos.entity.Usuario;
 
 import java.util.List;
 
@@ -102,7 +97,6 @@ public class Cidades extends AppCompatActivity {
             binding.txtCidades.setText("Cidades");
             Cidade cidade = new Cidade(nome, endereco);
             if(dbCidade != null){
-                //cidade.setCidadeID();
                 db.cidades().update(cidade);
                 Toast.makeText(this, "Cidade atualizada com sucesso.",
                         Toast.LENGTH_SHORT).show();

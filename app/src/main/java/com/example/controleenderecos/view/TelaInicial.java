@@ -59,6 +59,12 @@ public class TelaInicial extends AppCompatActivity {
                 startActivity(it);
             }
         });
+        binding.btnVolta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
     protected void onResume(){
         super.onResume();

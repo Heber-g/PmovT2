@@ -24,7 +24,6 @@ public class RegistroUserList extends AppCompatActivity {
     private List<Usuario> usuarioList;
     private Intent edtIntent;
     private Usuario dbUser;
-    private List listaUsuarios;
     private int dbUserID;
 
     @Override
@@ -97,7 +96,6 @@ public class RegistroUserList extends AppCompatActivity {
         }else {
             binding.txtModificar.setText("Modificar");
             Usuario novoUsuario = new Usuario(nome, email, senha);
-            //novoUsuario.setUsuarioID(usuarioList.get(listViewUser.getSelectedItemPosition()).getUsuarioID());
             if (dbUser != null) {
                 novoUsuario.setUsuarioID(dbUserID);
                 db.usuarios().update(novoUsuario);
