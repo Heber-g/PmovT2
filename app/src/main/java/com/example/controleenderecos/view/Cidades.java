@@ -71,7 +71,7 @@ public class Cidades extends AppCompatActivity {
         } else {
             binding.txtCidades.setText("");
         }
-        ArrayAdapter<Cidade> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
+        ArrayAdapter<Cidade> adapter = new ArrayAdapter<>(this, R.layout.layout_modelo,
                 cidadesList);
         listViewCidade.setAdapter(adapter);
 

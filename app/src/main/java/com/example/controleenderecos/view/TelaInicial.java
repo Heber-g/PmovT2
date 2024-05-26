@@ -18,6 +18,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import com.example.controleenderecos.R;
 import com.example.controleenderecos.database.LocalDatabase;
 import com.example.controleenderecos.databinding.ActivityTelaInicialBinding;
 import com.example.controleenderecos.entity.Cidade;
@@ -74,15 +75,15 @@ public class TelaInicial extends AppCompatActivity {
             binding.txtApresentaEnd.setText("Não há endereços cadastrados.");
         }
 
-        ArrayAdapter<Endereco> adapter = new ArrayAdapter<Endereco>(this, android.R.layout.simple_list_item_1, endList) {
+        ArrayAdapter<Endereco> adapter = new ArrayAdapter<Endereco>(this, R.layout.layout_modelo, endList) {
             @NonNull
             @Override
             public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
                 if (convertView == null) {
-                    convertView = LayoutInflater.from(getContext()).inflate(android.R.layout.simple_list_item_1, parent, false);
+                    convertView = LayoutInflater.from(getContext()).inflate(R.layout.layout_modelo, parent, false);
                 }
 
-                TextView textView = convertView.findViewById(android.R.id.text1);
+                TextView textView = convertView.findViewById(R.id.text_view);
                 Endereco endereco = getItem(position);
                 if (endereco != null) {
                     String cidadeNome = cidadeMap.get(endereco.getCidadeIDFK());

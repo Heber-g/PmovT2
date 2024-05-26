@@ -64,7 +64,7 @@ public class RegistroUserList extends AppCompatActivity {
         } else {
             binding.txtModificar.setText("");
         }
-        ArrayAdapter<Usuario> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
+        ArrayAdapter<Usuario> adapter = new ArrayAdapter<>(this, R.layout.layout_modelo,
                 usuarioList);
         listViewUser.setAdapter(adapter);
 
