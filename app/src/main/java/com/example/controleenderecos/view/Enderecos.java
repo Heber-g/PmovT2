@@ -61,7 +61,7 @@ public class Enderecos extends AppCompatActivity {
 
     public void popularSpinner(){
         listaCidades = db.cidades().getAll();
-        ArrayAdapter<Cidade> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,
+        ArrayAdapter<Cidade> adapter = new ArrayAdapter<>(this, R.layout.spinner_editado,
                 listaCidades);
         binding.spinnerCidade.setAdapter(adapter);
 

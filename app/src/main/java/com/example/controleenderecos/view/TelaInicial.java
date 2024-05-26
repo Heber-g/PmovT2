@@ -65,6 +65,7 @@ public class TelaInicial extends AppCompatActivity {
         edtIntent = new Intent(this, EnderecoEdicao.class);
         preencherLista();
     }
+
     public void preencherLista(){
         endList = db.enderecos().getAll();
         Map<Integer, String> cidadeMap = obterMapaCidades();
